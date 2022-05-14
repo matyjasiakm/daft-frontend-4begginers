@@ -16,14 +16,9 @@ function App() {
                 <div>
                     <button onClick={alertHandler}>CLICK ME!!</button>
                 </div>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
+                <div>
+                    <a  className="App-link" href="https://github.com/matyjasiakm/daft-frontend-4begginers">https://github.com/matyjasiakm/daft-frontend-4begginers</a>
+                </div>
             </header>
         </div>
     );
