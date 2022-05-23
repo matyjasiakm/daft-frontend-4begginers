@@ -3,10 +3,24 @@ import './InputForm.css';
 
 const storageFormKey = 'inpVal'
 
-export const InputForm = () => {
+interface InputProps {
+    defaultVal?: string
+}
+
+export const InputForm = (props?: InputProps) => {
     const [dispErrorMsg, setDispErrorMsg] = useState<boolean>(false)
     const [errMsg, setErrMsg] = useState<string>('')
     const [inputVal, setInputVal] = useState<string>('')
+
+    //Load value form storage
+    const loadValue = useCallback(() => {
+        const lcStorageData = localStorage.getItem(storageFormKey)
+        if (!!lcStorageData) {
+            setInputVal(lcStorageData)
+        } else if (!!props?.defaultVal) {
+            setInputVal(props?.defaultVal)
+        }
+    }, [props])
 
     useEffect(() => {
         const delay = setTimeout(() => {
@@ -48,19 +62,13 @@ export const InputForm = () => {
         loadValue()
         setDispErrorMsg(false)
         setErrMsg('')
-    }, [])
+    }, [loadValue])
 
-    //Load value form storage
-    const loadValue = () => {
-        const lcStorageData = localStorage.getItem(storageFormKey)
-        if (!!lcStorageData) {
-            setInputVal(lcStorageData)
-        }
-    }
+
     //Load value if is in storage
     useEffect(() => {
         loadValue()
-    }, [])
+    },[loadValue])
 
     return <div style={{display: "flex", flexDirection: 'column'}}>
         <div>Wprowadź nazwę użytkownika:</div>

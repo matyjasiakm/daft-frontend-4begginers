@@ -8,7 +8,7 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <InputForm></InputForm>
+                <InputForm defaultVal={"DefaultUser123"}></InputForm>
                 <div>
                     <a className="App-link"
                        href="https://github.com/matyjasiakm/daft-frontend-4begginers">https://github.com/matyjasiakm/daft-frontend-4begginers</a>
