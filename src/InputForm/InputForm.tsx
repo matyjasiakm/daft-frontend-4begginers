@@ -70,7 +70,7 @@ export const InputForm = (props?: InputProps) => {
         loadValue()
     },[loadValue])
 
-    return <div style={{display: "flex", flexDirection: 'column'}}>
+    return <div className='InputForm' style={{display: "flex", flexDirection: 'column'}}>
         <div>Wprowadź nazwę użytkownika:</div>
         {dispErrorMsg && <div style={{color: 'red'}}>{errMsg}</div>}
         <input className="Input-text-form" type="text" onChange={inputHandler} value={inputVal} onInput={inputHandler}/>
