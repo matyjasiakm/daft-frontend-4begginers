@@ -1,0 +1,51 @@
+#MenuIcon {
+    display: none;
+}
+.Nav-mobile {
+    display: none;
+}
+
+.Nav {
+    background-color: #282c34;
+    min-height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+.Content {
+    background-color: #282c34;
+    min-height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+
+.App-link {
+    color: #61dafb;
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+@media (max-width: 996px) {
+    .App-link{
+        flex-direction: column;
+    }
+    .Nav{
+        flex-direction: column;
+    }
+    #MenuIcon {
+        display: inline;
+    }
+    .Nav-mobile {
+        display: inline;
+    }
+}

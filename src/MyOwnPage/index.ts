@@ -1,0 +1,1 @@
+export {MyOwnPage} from './MyOwnPage'
