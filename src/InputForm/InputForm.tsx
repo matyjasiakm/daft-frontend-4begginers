@@ -68,12 +68,13 @@ export const InputForm = (props?: InputProps) => {
     //Load value if is in storage
     useEffect(() => {
         loadValue()
-    },[loadValue])
+    }, [loadValue])
 
     return <div className='InputForm' style={{display: "flex", flexDirection: 'column'}}>
         <div>Wprowadź nazwę użytkownika:</div>
         {dispErrorMsg && <div style={{color: 'red'}}>{errMsg}</div>}
         <input className="Input-text-form" type="text" onChange={inputHandler} value={inputVal} onInput={inputHandler}/>
+
         <div style={{display: "flex", flexDirection: "row", marginLeft: 'auto', marginRight: 'auto'}}>
             <button className="Submit-button" onClick={onClickSubmitButton}
                     disabled={dispErrorMsg || inputVal.length === 0}>Zapisz
